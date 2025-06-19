@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Northfield Bin Cleaning - Professional Garbage Bin Cleaning Services</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 40%;
+            height: 100%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="20" cy="20" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="80" cy="30" r="1.5" fill="rgba(255,255,255,0.1)"/><circle cx="30" cy="80" r="1" fill="rgba(255,255,255,0.1)"/></svg>') repeat;
+            animation: float 20s infinite linear;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-text h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: white;
+            margin-bottom: 1rem;
+            line-height: 1.1;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .hero-text p {
+            font-size: 1.3rem;
+            color: rgba(255,255,255,0.9);
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(45deg, #ff6b6b, #ee5a24);
+            color: white;
+            padding: 1.2rem 2.5rem;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 8px 25px rgba(255,107,107,0.3);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .cta-button:hover::before {
+            left: 100%;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(255,107,107,0.4);
+        }
+
+        .hero-visual {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        .bin-graphic {
+            width: 300px;
+            height: 400px;
+            background: linear-gradient(145deg, #34495e, #2c3e50);
+            border-radius: 20px 20px 30px 30px;
+            position: relative;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            animation: pulse 3s infinite ease-in-out;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .bin-graphic::before {
+            content: '';
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            right: 20px;
+            height: 30px;
+            background: linear-gradient(90deg, #3498db, #2980b9);
+            border-radius: 15px;
+            box-shadow: inset 0 2px 10px rgba(0,0,0,0.2);
+        }
+
+        .sparkles {
+            position: absolute;
+            top: -50px;
+            left: -50px;
+            right: -50px;
+            bottom: -50px;
+            pointer-events: none;
+        }
+
+        .sparkle {
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            background: #ffd700;
+            border-radius: 50%;
+            animation: sparkle 2s infinite ease-in-out;
+        }
+
+        .sparkle:nth-child(1) { top: 20%; left: 10%; animation-delay: 0s; }
+        .sparkle:nth-child(2) { top: 40%; right: 15%; animation-delay: 0.5s; }
+        .sparkle:nth-child(3) { bottom: 30%; left: 20%; animation-delay: 1s; }
+        .sparkle:nth-child(4) { bottom: 10%; right: 10%; animation-delay: 1.5s; }
+
+        @keyframes sparkle {
+            0%, 100% { opacity: 0; transform: scale(0); }
+            50% { opacity: 1; transform: scale(1); }
+        }
+
+        .before-after {
+            padding: 6rem 2rem;
+            background: white;
+        }
+
+        .gallery-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #2c3e50;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(45deg, #ff6b6b, #ee5a24);
+            border-radius: 2px;
+        }
+
+        .photo-notice {
+            background: linear-gradient(135deg, #3498db, #2980b9);
+            color: white;
+            padding: 1.5rem;
+            border-radius: 15px;
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 3rem;
+        }
+
+        .comparison-card {
+            background: #f8f9fa;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .comparison-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .comparison-images {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            position: relative;
+        }
+
+        .image-container {
+            position: relative;
+            aspect-ratio: 4/3;
+            overflow: hidden;
+        }
+
+        .image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .image-container:hover img {
+            transform: scale(1.05);
+        }
+
+        .image-label {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .before-label {
+            background: rgba(231, 76, 60, 0.9);
+        }
+
+        .after-label {
+            background: rgba(46, 204, 113, 0.9);
+        }
+
+        .comparison-divider {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(to bottom, #e74c3c, #2ecc71);
+            z-index: 2;
+        }
+
+        .comparison-text {
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .comparison-text h3 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+        }
+
+        .comparison-text p {
+            color: #7f8c8d;
+            font-size: 0.95rem;
+        }
+
+        .services {
+            padding: 6rem 2rem;
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            position: relative;
+        }
+
+        .services::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 100px;
+            background: white;
+            clip-path: polygon(0 0, 100% 0, 100% 20px, 0 100%);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+            margin-top: 4rem;
+        }
+
+        .service-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+        }
+
+        .service-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 2rem;
+            color: white;
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #2c3e50;
+            margin-bottom: 1rem;
+        }
+
+        .contact {
+            background: linear-gradient(135deg, #2c3e50, #34495e);
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .contact h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            font-weight: 800;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 4rem;
+            margin: 3rem 0;
+            flex-wrap: wrap;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(45deg, #ff6b6b, #ee5a24);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+        }
+
+        .secondary-cta {
+            background: transparent;
+            border: 2px solid #ff6b6b;
+            color: #ff6b6b;
+            padding: 1rem 2rem;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            display: inline-block;
+            margin-top: 2rem;
+        }
+
+        .secondary-cta:hover {
+            background: #ff6b6b;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 768px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 2rem;
+            }
+
+            .hero-text h1 {
+                font-size: 2.5rem;
+            }
+
+            .bin-graphic {
+                width: 200px;
+                height: 280px;
+            }
+
+            .comparison-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-info {
+                flex-direction: column;
+                gap: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1>Fresh & Clean Bins Every Time</h1>
+                <p>Professional garbage bin cleaning services in Northfield. We sanitize, deodorize, and make your bins sparkle while you focus on what matters most.</p>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSfFQiclEz_7SrW8G0_8ig_aWDyFf0wb3OiQDTFZyZzmtAAYQw/viewform?usp=dialog" class="cta-button" target="_blank">Book Your Service</a>
+            </div>
+            <div class="hero-visual">
+                <div class="bin-graphic">
+                    <div class="sparkles">
+                        <div class="sparkle"></div>
+                        <div class="sparkle"></div>
+                        <div class="sparkle"></div>
+                        <div class="sparkle"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="before-after">
+        <div class="gallery-container">
+            <h2 class="section-title">See the Difference</h2>
+            
+            <div class="photo-notice">
+                <p><strong>📸 Replace these placeholder images with your actual before/after photos</strong><br>
+                Save your photos as "trash-before.jpg", "trash-after.jpg", etc. and update the image sources below</p>
+            </div>
+
+            <div class="comparison-grid">
+                <!-- Trash Bin -->
+                <div class="comparison-card">
+                    <div class="comparison-images">
+                        <div class="comparison-divider"></div>
+                        <div class="image-container">
+                            <img src="https://via.placeholder.com/400x300/8b0000/ffffff?text=DIRTY+TRASH+BIN" alt="Dirty trash bin before cleaning">
+                            <div class="image-label before-label">Before</div>
+                        </div>
+                        <div class="image-container">
+                            <img src="https://via.placeholder.com/400x300/228b22/ffffff?text=CLEAN+TRASH+BIN" alt="Clean trash bin after service">
+                            <div class="image-label after-label">After</div>
+                        </div>
+                    </div>
+                    <div class="comparison-text">
+                        <h3>🗑️ Trash Bin</h3>
+                        <p>From grimy and smelly to fresh and sanitized</p>
+                    </div>
+                </div>
+
+                <!-- Recycling Bin -->
+                <div class="comparison-card">
+                    <div class="comparison-images">
+                        <div class="comparison-divider"></div>
+                        <div class="image-container">
+                            <img src="https://via.placeholder.com/400x300/8b0000/ffffff?text=DIRTY+RECYCLE+BIN" alt="Dirty recycling bin before cleaning">
+                            <div class="image-label before-label">Before</div>
+                        </div>
+                        <div class="image-container">
+                            <img src="https://via.placeholder.com/400x300/228b22/ffffff?text=CLEAN+RECYCLE+BIN" alt="Clean recycling bin after service">
+                            <div class="image-label after-label">After</div>
+                        </div>
+                    </div>
+                    <div class="comparison-text">
+                        <h3>♻️ Recycling Bin</h3>
+                        <p>Sticky residue and odors completely eliminated</p>
+                    </div>
+                </div>
+
+                <!-- Compost Bin -->
+                <div class="comparison-card">
+                    <div class="comparison-images">
+                        <div class="comparison-divider"></div>
+                        <div class="image-container">
+                            <img src="https://via.placeholder.com/400x300/8b0000/ffffff?text=DIRTY+COMPOST+BIN" alt="Dirty compost bin before cleaning">
+                            <div class="image-label before-label">Before</div>
+                        </div>
+                        <div class="image-container">
+                            <img src="https://via.placeholder.com/400x300/228b22/ffffff?text=CLEAN+COMPOST+BIN" alt="Clean compost bin after service">
+                            <div class="image-label after-label">After</div>
+                        </div>
+                    </div>
+                    <div class="comparison-text">
+                        <h3>🌱 Compost Bin</h3>
+                        <p>Deep cleaned and deodorized for fresh composting</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="services">
+        <div class="container">
+            <h2 class="section-title">Why Choose Northfield Bin Cleaning?</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">🧽</div>
+                    <h3>Deep Sanitization</h3>
+                    <p>High-pressure washing with eco-friendly sanitizers eliminates bacteria, germs, and unpleasant odors from your bins.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🕒</div>
+                    <h3>Convenient Scheduling</h3>
+                    <p>Regular service plans that work around your schedule. We clean your bins while you're at work or away.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🌱</div>
+                    <h3>Eco-Friendly</h3>
+                    <p>Environmentally safe cleaning products and water reclamation systems protect your family and the planet.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">✨</div>
+                    <h3>Like-New Results</h3>
+                    <p>Professional equipment and techniques restore your bins to a fresh, clean condition inside and out.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">💰</div>
+                    <h3>Affordable Rates</h3>
+                    <p>Competitive pricing with flexible service options to fit any budget. No contracts required.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🏠</div>
+                    <h3>Local Service</h3>
+                    <p>Proudly serving the Northfield community with reliable, friendly, and professional bin cleaning services.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact">
+        <div class="container">
+            <h2>Ready for Cleaner Bins?</h2>
+            <p>Join hundreds of satisfied customers in Northfield who trust us with their bin cleaning needs.</p>
+            
+            <div class="contact-info">
+                <div class="contact-item">
+                    <div class="contact-icon">📧</div>
+                    <div>
+                        <strong>Email Us</strong><br>
+                        <a href="mailto:northfieldbincleaning@gmail.com" style="color: #ff6b6b; text-decoration: none;">northfieldbincleaning@gmail.com</a>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">📅</div>
+                    <div>
+                        <strong>Book Online</strong><br>
+                        Quick & Easy Scheduling
+                    </div>
+                </div>
+            </div>
+
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSfFQiclEz_7SrW8G0_8ig_aWDyFf0wb3OiQDTFZyZzmtAAYQw/viewform?usp=dialog" class="secondary-cta" target="_blank">Get Your Free Quote</a>
+        </div>
+    </section>
+
+    <script>
+        // Add smooth scrolling and interactive effects
+        document.addEventListener('DOMContentLoaded', function() {
+            // Animate service cards on scroll
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
+
+            // Observe service cards
+            document.querySelectorAll('.service-card').forEach((card, index) => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(30px)';
+                card.style.transition = `all 0.6s ease ${index * 0.1}s`;
+                observer.observe(card);
+            });
+
+            // Add click tracking for CTA buttons
+            document.querySelectorAll('.cta-button, .secondary-cta').forEach(button => {
+                button.addEventListener('click', function() {
+                    // Add a subtle animation on click
+                    this.style.transform = 'scale(0.95)';
+                    setTimeout(() => {
+                        this.style.transform = '';
+                    }, 150);
+                });
+            });
+        });
+    </script>
+</body>
+</html>
